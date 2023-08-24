@@ -35,7 +35,7 @@ def see_completed(request):
 def see_active(request):
     print(request.user.id)
     context = models.Note.objects.filter(user_id=request.user.id, status='active')
-    return render(request, 'see_completed_notes.html', {'notes': context})
+    return render(request, 'see_active_notes.html', {'notes': context})
 
 
 def register(request):

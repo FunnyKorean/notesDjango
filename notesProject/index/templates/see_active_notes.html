@@ -1,0 +1,17 @@
+{% extends 'layout.html'%}
+
+{% block title %}Completed Notes{% endblock %}
+
+
+{% block content %}
+    {% for note in notes %}
+        <h1>{{note.title}}</h1><br>
+        {{note.text}}
+        <br>
+        Due Date: {{ note.due_date }}
+        <br>
+        <a href="{% url 'note-detail' note.id %}"><button>See Details</button></a>
+    <hr>
+    {% endfor %}
+
+{% endblock %}
