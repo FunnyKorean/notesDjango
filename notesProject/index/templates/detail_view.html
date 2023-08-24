@@ -1,0 +1,19 @@
+{% extends 'layout.html'%}
+
+{% block title %} {{ note.title }} {% endblock %}
+
+
+{% block content %}
+    <h1>{{note.title}}</h1>
+    <h4>{{note.text}}</h4>
+
+    <h5>Due Date: {{note.due_date}}</h5>
+    {% if note.status == 'active'%}
+    <a href="{% url 'note-delete' note.id %}"><button>Delete Note</button></a>
+    <a href="{% url 'note-update' note.id %}"><button>Update Note</button></a>
+    <a href="{% url 'note-complete' note.id %}"><button>Complete Note</button></a>
+    {% else %}
+        <a href="{% url 'note-delete' note.id %}"><button>Delete Note</button></a>
+    {% endif %}
+
+{% endblock %}

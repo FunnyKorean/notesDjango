@@ -1,0 +1,19 @@
+{% extends 'layout.html'%}
+
+{% block title %}Create New Note{% endblock %}
+
+
+{% block content %}
+    <h1>Create New Note</h1>
+    <form method="POST">
+    {% csrf_token %}
+    Name the Note<br>
+    {{form.title}} <hr>
+    Text for the Note <br>
+    {{form.text}}<hr>
+    What is the Due Date? <br>
+    {{form.due_date}}<hr>
+    <button type="submit">Add Note</button>
+</form>
+
+{% endblock %}

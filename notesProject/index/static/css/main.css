@@ -1,0 +1,29 @@
+body {
+
+}
+aside {
+    background: #ebc252;
+    float: left;
+    width: 20%;
+    padding: 2.5%;
+    height: 100vh;
+    border-right: 5px solid #4d4d4d;
+}
+aside img {
+    width: 200px;
+    float: left;
+}
+
+aside ul {
+    list-style: none;
+}
+aside ul li {
+    display: block;
+    margin-top: 20px;
+    transition: transform .6s ease;
+}
+aside ul li:hover,  aside ul a:hover {
+    color: red;
+    text-decoration: none;
+    transform: scale(1.05);
+}
